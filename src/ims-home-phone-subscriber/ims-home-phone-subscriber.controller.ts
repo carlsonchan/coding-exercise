@@ -21,9 +21,9 @@ export class ImsHomePhoneSubscriberController {
 
   /**
    * Retrieve the subscriber identified by the provided phone number.
-   * Validates phone number to ensure it only contains number
+   * Validates phone number to ensure it only contains number.
    * @param params phoneNumber: string
-   * @returns subscriber resource if it exist
+   * @returns Subscriber resource if it exist or throws 404 error
    */
   @Get(':phoneNumber')
   async findOne(
@@ -44,10 +44,11 @@ export class ImsHomePhoneSubscriberController {
 
   /**
    * Add or update a subscriber identified by the provided phone number.
-   * alidates phone number to ensure it only contains number and matches phone number in body
+   * Validates phone number to ensure it only contains number and matches phone number in body
    * @param params phoneNumber: string
    * @param imsHomePhoneSubscriberDto subscriber object
-   * @returns newly created/updated subscriber resource
+   * @returns Newly created/updated subscriber resource or throw 400 error if the phone number
+   * does not match phone number in body
    */
   @Put(':phoneNumber')
   async createOrUpdate(
@@ -65,7 +66,9 @@ export class ImsHomePhoneSubscriberController {
 
   /**
    * Remove the subscriber identified by the phone number.
+   * Validates phone number to ensure it only contains number.
    * @param params phoneNumber: string
+   * @returns Throws 404 error if the subscriber resource is not found
    */
   @Delete(':phoneNumber')
   async delete(@Param() params: FindOneOrDeleteParams): Promise<void> {

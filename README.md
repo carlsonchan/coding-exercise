@@ -11,7 +11,7 @@ Provide basic implmentation(GET, PUT and DELETE) of IMS home phone subscriber se
 ## Prequisite
 - MongoDB is setup locally
 - Create `.env.yaml` file and provide all the information required as seen in `.env.sample.yaml`
-- Postman to make request to `localhost:3000/ims/subscriber/:phoneNumber`
+- Postman to make requests to `localhost:3000/ims/subscriber/:phoneNumber`
 
 ## Installation
 
