@@ -14,7 +14,7 @@ export class ImsHomePhoneSubscriberService {
     private readonly ImsHomePhoneSubscriberModel: Model<ImsHomePhoneSubscriberDocument>,
   ) {}
 
-  async findOne(phoneNumber: number): Promise<ImsHomePhoneSubscriber> {
+  async findOne(phoneNumber: string): Promise<ImsHomePhoneSubscriber> {
     return await this.ImsHomePhoneSubscriberModel.findOne({
       phoneNumber,
     }).exec();
@@ -32,7 +32,7 @@ export class ImsHomePhoneSubscriberService {
     return result;
   }
 
-  async delete(phoneNumber: number): Promise<ImsHomePhoneSubscriber> {
+  async delete(phoneNumber: string): Promise<ImsHomePhoneSubscriber> {
     return await this.ImsHomePhoneSubscriberModel.findOneAndRemove({
       phoneNumber,
     }).exec();

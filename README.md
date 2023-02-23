@@ -5,7 +5,7 @@ Provide basic implmentation(GET, PUT and DELETE) of IMS home phone subscriber se
 ## Assumptions
 - Subscriber resource requires all the fields to be filled out. This allows validation to be a bit easier.
 - The subscriber resource example shape will never change. This allows me to create the shape of the object in mongo and use `strict: true` 
-- phoneNumber is a number but is saved in the db as a string. I wanted to make sure that the user would not enter letters or unwanted characters when making the request but left it as string since the sample JSON is in string format
+- phoneNumber is a number but is saved in the db as a string. I added validation to ensure the string is only numbers. Ideally add a phone number specific validator or regex
 - Internal api usage, if this was external I would need to add more security feature such as auth.
 
 ## Prequisite

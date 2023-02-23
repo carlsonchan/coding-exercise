@@ -14,7 +14,7 @@ export class Features {
 export class CreateUpdateImsHomePhoneSubscriberDto {
   @IsNotEmpty()
   @IsNumberString()
-  readonly phoneNumber: number;
+  readonly phoneNumber: string;
   @IsNotEmpty()
   readonly username: string;
   @IsNotEmpty()
